@@ -1,0 +1,1390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Deniskov Encryption Tool</string>
+  </property>
+  <property name="toolTip">
+   <string/>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow, QWidget#centralwidget {
+    background-color: red;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+	border: 0px solid white;
+	background-color: #1e1e1e;
+}</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0" alignment="Qt::AlignLeft">
+     <widget class="QWidget" name="LeftMenuContainer" native="true">
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: #2d2d2d;
+	border-radius: 5px;
+	color: #ffffff;
+	font-size: 20px;
+	border: none;
+	padding: 10px;
+}
+QPushButton#Affine {
+	border: 1px solid #6a0dad;
+	background-color: #6a0dad;
+}</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item alignment="Qt::AlignTop">
+        <widget class="QFrame" name="frame_2">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QPushButton" name="Affine_Button">
+            <property name="text">
+             <string>Affine</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Playfair_Button">
+            <property name="text">
+             <string>Playfair</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="ADFGVX_Button">
+            <property name="text">
+             <string>ADFGVX</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="RSA_Button">
+            <property name="text">
+             <string>RSA</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="DSA_Button">
+            <property name="text">
+             <string>DSA</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QWidget" name="MainWindowContainer" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTabBar::tab {
+	background: #606368;
+	padding: 8px 16px;
+	border: none;
+}
+QTabBar::tab:selected {
+	background: #b64fc8;
+	color: white;
+}
+
+* {
+	border: none;
+}
+
+QWidget {
+	background-color: #1e1e1e;
+	border: none;
+}
+
+QWidget#MainWindowContainer {
+	background-color: #1e1e1e;
+}</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QFrame" name="frame">
+         <property name="styleSheet">
+          <string notr="true">QFrame {
+	border: none;
+	background-color: #1e1e1e;
+}
+
+* {
+	border: 0px solid;
+}
+
+QPushButton {
+	background-color: #6a0dad;
+	border: none;
+	border-radius: 6px;
+	padding: 8px;
+	color: white;
+}
+QPushButton:hover {
+	background-color: #8a2be2;
+}
+QLineEdit, QTextEdit {
+	background-color: #2d2d2d;
+	border: 1px solid #444;
+	border-radius: 6px;
+	padding: 6px;
+	color: #ffffff;
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QStackedWidget" name="stackedWidget">
+            <property name="currentIndex">
+             <number>4</number>
+            </property>
+            <widget class="QWidget" name="AffineWindow">
+             <widget class="QWidget" name="verticalLayoutWidget">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>621</width>
+                <height>461</height>
+               </rect>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <item>
+                <layout class="QGridLayout" name="gridLayout_2">
+                 <item row="0" column="0">
+                  <widget class="QTextEdit" name="aInput_Affine">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="tabChangesFocus">
+                    <bool>true</bool>
+                   </property>
+                   <property name="placeholderText">
+                    <string>Enter a (int)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1" alignment="Qt::AlignLeft">
+                  <widget class="QPushButton" name="randomB_Affine">
+                   <property name="maximumSize">
+                    <size>
+                     <width>40</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	background: none;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="resources.qrc">
+                     <normaloff>:/icons/Icons/random.png</normaloff>:/icons/Icons/random.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QTextEdit" name="bInput_Affine">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="tabChangesFocus">
+                    <bool>true</bool>
+                   </property>
+                   <property name="placeholderText">
+                    <string>Enter b (int)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0" colspan="2">
+                  <widget class="QTextEdit" name="stringInput_Affine">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="tabChangesFocus">
+                    <bool>true</bool>
+                   </property>
+                   <property name="placeholderText">
+                    <string>Enter Text to Encrypt/Decrypt</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QPushButton" name="randomA_Affine">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>40</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	background: none;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="resources.qrc">
+                     <normaloff>:/icons/Icons/random.png</normaloff>:/icons/Icons/random.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                 <item>
+                  <widget class="QPushButton" name="encryptButton_Affine">
+                   <property name="minimumSize">
+                    <size>
+                     <width>200</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>200</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Encrypt</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="resources.qrc">
+                     <normaloff>:/icons/Icons/lock.png</normaloff>:/icons/Icons/lock.png</iconset>
+                   </property>
+                   <property name="flat">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="decryptButton_Affine">
+                   <property name="minimumSize">
+                    <size>
+                     <width>200</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>200</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Decrypt</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="resources.qrc">
+                     <normaloff>:/icons/Icons/Unlock.png</normaloff>:/icons/Icons/Unlock.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QTextEdit" name="resultBox_Affine">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit, QTextEdit {
+	background-color: #2d2d2d;
+	border: 1px solid #444;
+	border-radius: 6px;
+	padding: 6px;
+	color: #ffffff;
+}</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Result will appear here...</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="PlayfairWindow">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <widget class="QWidget" name="verticalLayoutWidget_2">
+              <property name="geometry">
+               <rect>
+                <x>9</x>
+                <y>-1</y>
+                <width>611</width>
+                <height>451</height>
+               </rect>
+              </property>
+              <layout class="QVBoxLayout" name="PlayfairWindowBox">
+               <item>
+                <layout class="QFormLayout" name="playfairLanguages">
+                 <property name="topMargin">
+                  <number>5</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>5</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QPushButton" name="enButton_Playfair">
+                   <property name="maximumSize">
+                    <size>
+                     <width>32</width>
+                     <height>32</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	border-radius: 16px;
+	background-color: #6a0dad;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="resources.qrc">
+                     <normaloff>:/icons/Icons/uk.png</normaloff>:/icons/Icons/uk.png</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>24</width>
+                     <height>24</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QPushButton" name="czButton_Playfair">
+                   <property name="maximumSize">
+                    <size>
+                     <width>32</width>
+                     <height>32</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	border-radius: 16px;
+	background-color: none;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="resources.qrc">
+                     <normaloff>:/icons/Icons/cz.png</normaloff>:/icons/Icons/cz.png</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>24</width>
+                     <height>24</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QTextEdit" name="keyInput_Playfair">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="tabChangesFocus">
+                  <bool>true</bool>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Enter key (optional)</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTextEdit" name="stringInput_Playfair">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="tabChangesFocus">
+                  <bool>true</bool>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Enter text</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="encryptDecryptButtons_Playfair">
+                 <item>
+                  <widget class="QPushButton" name="encryptButton_Playfair">
+                   <property name="text">
+                    <string>Encrypt</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="resources.qrc">
+                     <normaloff>:/icons/Icons/lock.png</normaloff>:/icons/Icons/lock.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="decryptButton_Playfair">
+                   <property name="text">
+                    <string>Decrypt</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="resources.qrc">
+                     <normaloff>:/icons/Icons/Unlock.png</normaloff>:/icons/Icons/Unlock.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QTabWidget" name="tabWidget">
+                 <property name="styleSheet">
+                  <string notr="true">.QTabWidget::pane{
+    border:none
+}</string>
+                 </property>
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <widget class="QWidget" name="outputBox_PlayfairTab">
+                  <attribute name="title">
+                   <string>Output</string>
+                  </attribute>
+                  <widget class="QTextEdit" name="outputBox_Playfair">
+                   <property name="geometry">
+                    <rect>
+                     <x>3</x>
+                     <y>0</y>
+                     <width>611</width>
+                     <height>241</height>
+                    </rect>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QTextEdit {
+	margin: 5px;
+	border-radius: 5px;
+}</string>
+                   </property>
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                   <property name="placeholderText">
+                    <string>Output will appear here...</string>
+                   </property>
+                  </widget>
+                 </widget>
+                 <widget class="QWidget" name="table_PlayfairTab">
+                  <attribute name="title">
+                   <string>Table</string>
+                  </attribute>
+                  <widget class="QTableWidget" name="table_Playfair">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>20</y>
+                     <width>571</width>
+                     <height>213</height>
+                    </rect>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>600</width>
+                     <height>600</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QTableWidget {
+	background-color: #2d2d2d;
+	gridline-color: #6a0dad;
+	color: white;
+}
+
+QHeaderView::section {
+	background-color: #6a0dad;
+	color: white;
+	border: none;
+	padding: 5px;
+}
+
+ QTableCornerButton::section {
+     background-color: #1e1e1e;
+ }
+
+QTableView::item:selected {
+    background-color: #2d2d2d;
+}</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Plain</enum>
+                   </property>
+                   <property name="lineWidth">
+                    <number>0</number>
+                   </property>
+                   <property name="verticalScrollBarPolicy">
+                    <enum>Qt::ScrollBarAlwaysOff</enum>
+                   </property>
+                   <property name="horizontalScrollBarPolicy">
+                    <enum>Qt::ScrollBarAlwaysOff</enum>
+                   </property>
+                   <property name="autoScroll">
+                    <bool>false</bool>
+                   </property>
+                   <property name="alternatingRowColors">
+                    <bool>false</bool>
+                   </property>
+                   <property name="showGrid">
+                    <bool>true</bool>
+                   </property>
+                   <property name="gridStyle">
+                    <enum>Qt::DashDotDotLine</enum>
+                   </property>
+                   <property name="cornerButtonEnabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="rowCount">
+                    <number>5</number>
+                   </property>
+                   <property name="columnCount">
+                    <number>5</number>
+                   </property>
+                   <attribute name="horizontalHeaderDefaultSectionSize">
+                    <number>109</number>
+                   </attribute>
+                   <attribute name="horizontalHeaderMinimumSectionSize">
+                    <number>52</number>
+                   </attribute>
+                   <attribute name="verticalHeaderDefaultSectionSize">
+                    <number>36</number>
+                   </attribute>
+                   <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+                    <bool>false</bool>
+                   </attribute>
+                   <row/>
+                   <row/>
+                   <row/>
+                   <row/>
+                   <row/>
+                   <column/>
+                   <column/>
+                   <column/>
+                   <column/>
+                   <column/>
+                  </widget>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="ADFGVXWindow">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <widget class="QWidget" name="verticalLayoutWidget_3">
+              <property name="geometry">
+               <rect>
+                <x>9</x>
+                <y>9</y>
+                <width>611</width>
+                <height>451</height>
+               </rect>
+              </property>
+              <layout class="QVBoxLayout" name="ADFGVXWindowBox">
+               <property name="sizeConstraint">
+                <enum>QLayout::SetMaximumSize</enum>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0,0,0">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="sizeConstraint">
+                  <enum>QLayout::SetDefaultConstraint</enum>
+                 </property>
+                 <property name="topMargin">
+                  <number>5</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="enButton_ADFGVX">
+                   <property name="maximumSize">
+                    <size>
+                     <width>32</width>
+                     <height>32</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	border-radius: 16px;
+	background-color: #6a0dad;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="resources.qrc">
+                     <normaloff>:/icons/Icons/uk.png</normaloff>:/icons/Icons/uk.png</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>24</width>
+                     <height>24</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="czButton_ADFGVX">
+                   <property name="maximumSize">
+                    <size>
+                     <width>32</width>
+                     <height>32</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	border-radius: 16px;
+	background-color: none;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="resources.qrc">
+                     <normaloff>:/icons/Icons/cz.png</normaloff>:/icons/Icons/cz.png</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>24</width>
+                     <height>24</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="x6Layout">
+                   <property name="maximumSize">
+                    <size>
+                     <width>32</width>
+                     <height>32</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>7</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	border-radius: 16px;
+	background-color: none;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>6x6</string>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>24</width>
+                     <height>24</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="ADFGVXTableSelection">
+                 <item>
+                  <widget class="QPushButton" name="RandomTable">
+                   <property name="text">
+                    <string>Random Table</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="ManualTable">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	background-color: none;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Manual Table</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QPlainTextEdit" name="ADFGVXKeyInput">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPlainTextEdit {
+	background-color: #2d2d2d;
+	border: 1px solid #444;
+	border-radius: 6px;
+	padding: 6px;
+	color: #ffffff;
+}</string>
+                 </property>
+                 <property name="tabChangesFocus">
+                  <bool>true</bool>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Enter key...</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPlainTextEdit" name="ADFGVXTextInput">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPlainTextEdit {
+	background-color: #2d2d2d;
+	border: 1px solid #444;
+	border-radius: 6px;
+	padding: 6px;
+	color: #ffffff;
+}</string>
+                 </property>
+                 <property name="tabChangesFocus">
+                  <bool>true</bool>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Enter text...</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="ADFGVXEnDeCryptButtons">
+                 <item>
+                  <widget class="QPushButton" name="EncryptADFGVX">
+                   <property name="text">
+                    <string>Encrypt</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="resources.qrc">
+                     <normaloff>:/icons/Icons/lock.png</normaloff>:/icons/Icons/lock.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="DecryptADFGVX">
+                   <property name="text">
+                    <string>Decrypt</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="resources.qrc">
+                     <normaloff>:/icons/Icons/Unlock.png</normaloff>:/icons/Icons/Unlock.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QTabWidget" name="tabWidget_2">
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <widget class="QWidget" name="ADFGVXTableTab">
+                  <attribute name="title">
+                   <string>Table</string>
+                  </attribute>
+                  <widget class="QTableWidget" name="ADFGVXTable">
+                   <property name="geometry">
+                    <rect>
+                     <x>-2</x>
+                     <y>-1</y>
+                     <width>611</width>
+                     <height>211</height>
+                    </rect>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QTableWidget {
+	margin-top: 5px;
+	gridline-color: #6a0dad;
+	color: white;
+}
+
+QHeaderView::section {
+	background-color: #6a0dad;
+	color: white;
+	border: none;
+	padding: 5px;
+}
+
+ QTableCornerButton::section {
+     background-color: #1e1e1e;
+ }
+
+QTableView::item:selected {
+    background-color: #2d2d2d;
+}</string>
+                   </property>
+                   <property name="rowCount">
+                    <number>6</number>
+                   </property>
+                   <property name="columnCount">
+                    <number>6</number>
+                   </property>
+                   <attribute name="horizontalHeaderDefaultSectionSize">
+                    <number>95</number>
+                   </attribute>
+                   <attribute name="verticalHeaderDefaultSectionSize">
+                    <number>28</number>
+                   </attribute>
+                   <attribute name="verticalHeaderMinimumSectionSize">
+                    <number>18</number>
+                   </attribute>
+                   <row/>
+                   <row/>
+                   <row/>
+                   <row/>
+                   <row/>
+                   <row/>
+                   <column/>
+                   <column/>
+                   <column/>
+                   <column/>
+                   <column/>
+                   <column/>
+                  </widget>
+                 </widget>
+                 <widget class="QWidget" name="ADFGVXOutputTab">
+                  <attribute name="title">
+                   <string>Output</string>
+                  </attribute>
+                  <widget class="QPlainTextEdit" name="ADFGVXOutputBox">
+                   <property name="geometry">
+                    <rect>
+                     <x>3</x>
+                     <y>7</y>
+                     <width>601</width>
+                     <height>201</height>
+                    </rect>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPlainTextEdit {
+	background-color: #2d2d2d;
+	border: 1px solid #444;
+	border-radius: 6px;
+	padding: 6px;
+	color: #ffffff;
+}</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>Result will appear here...</string>
+                   </property>
+                  </widget>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="RSAWindow">
+             <widget class="QTabWidget" name="tabWidget_3">
+              <property name="geometry">
+               <rect>
+                <x>-4</x>
+                <y>-1</y>
+                <width>641</width>
+                <height>471</height>
+               </rect>
+              </property>
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="KeyGen">
+               <attribute name="title">
+                <string>Key Generator</string>
+               </attribute>
+               <widget class="QWidget" name="verticalLayoutWidget_4">
+                <property name="geometry">
+                 <rect>
+                  <x>9</x>
+                  <y>9</y>
+                  <width>621</width>
+                  <height>421</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_7">
+                 <item>
+                  <widget class="QPushButton" name="rsa_gen_keys_btn">
+                   <property name="text">
+                    <string>Generate keys</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTextEdit" name="rsa_keys_log">
+                   <property name="font">
+                    <font>
+                     <family>Consolas</family>
+                     <pointsize>24</pointsize>
+                    </font>
+                   </property>
+                   <property name="placeholderText">
+                    <string>All values will be displayed here...</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="Operations">
+               <attribute name="title">
+                <string>Operations</string>
+               </attribute>
+               <widget class="QWidget" name="verticalLayoutWidget_6">
+                <property name="geometry">
+                 <rect>
+                  <x>9</x>
+                  <y>9</y>
+                  <width>621</width>
+                  <height>421</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <item>
+                  <widget class="QTextEdit" name="rsa_plain_input">
+                   <property name="font">
+                    <font>
+                     <family>Consolas</family>
+                     <pointsize>14</pointsize>
+                    </font>
+                   </property>
+                   <property name="placeholderText">
+                    <string>Enter text to encrypt/decrypt</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="rsa_pub_key_input">
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="placeholderText">
+                    <string>Enter public key for encryption... (n, e)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="rsa_priv_key_input">
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="placeholderText">
+                    <string>Enter private key for decryption... (n, d)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_6">
+                   <item>
+                    <widget class="QPushButton" name="rsa_encrypt_btn">
+                     <property name="text">
+                      <string>Encrypt</string>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="resources.qrc">
+                       <normaloff>:/icons/Icons/lock.png</normaloff>:/icons/Icons/lock.png</iconset>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="rsa_decrypt_btn">
+                     <property name="text">
+                      <string>Decrypt</string>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="resources.qrc">
+                       <normaloff>:/icons/Icons/Unlock.png</normaloff>:/icons/Icons/Unlock.png</iconset>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QTextEdit" name="rsa_output_log">
+                   <property name="font">
+                    <font>
+                     <family>Consolas</family>
+                     <pointsize>14</pointsize>
+                    </font>
+                   </property>
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                   <property name="placeholderText">
+                    <string>Output will be shown here</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="DSA">
+             <widget class="QTabWidget" name="tabWidget_4">
+              <property name="geometry">
+               <rect>
+                <x>4</x>
+                <y>-1</y>
+                <width>621</width>
+                <height>461</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QTabWidget{
+	padding: 2px;
+}</string>
+              </property>
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="tab">
+               <property name="styleSheet">
+                <string notr="true">QVBoxLayout{
+	padding: 5px;
+}</string>
+               </property>
+               <attribute name="title">
+                <string>Key Generation</string>
+               </attribute>
+               <widget class="QWidget" name="verticalLayoutWidget_5">
+                <property name="geometry">
+                 <rect>
+                  <x>9</x>
+                  <y>9</y>
+                  <width>601</width>
+                  <height>411</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout">
+                   <item>
+                    <widget class="QPushButton" name="DSA_GenerateKeys">
+                     <property name="text">
+                      <string>Generate keys</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="DSA_SaveKeys">
+                     <property name="text">
+                      <string>Save keys</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QTextEdit" name="DSA_KeyOutput">
+                   <property name="styleSheet">
+                    <string notr="true">QTextEdit {
+	margin: 1px;
+}</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>Output will show here...</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="tab_2">
+               <attribute name="title">
+                <string>Signing/Verification</string>
+               </attribute>
+               <widget class="QWidget" name="horizontalLayoutWidget_2">
+                <property name="geometry">
+                 <rect>
+                  <x>-1</x>
+                  <y>9</y>
+                  <width>611</width>
+                  <height>411</height>
+                 </rect>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_8">
+                   <item>
+                    <widget class="QPushButton" name="DSA_LoadFile">
+                     <property name="text">
+                      <string>Load file</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QTextEdit" name="DSA_FileInfo">
+                     <property name="styleSheet">
+                      <string notr="true">QTextEdit {
+	margin: 5px;
+}</string>
+                     </property>
+                     <property name="placeholderText">
+                      <string>File info will be shown here...</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="DSA_LoadPriv">
+                     <property name="text">
+                      <string>Load private key</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="DSA_Sign">
+                     <property name="text">
+                      <string>Sign file</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+	color: red;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>IF THE PROGRAM LOOKS STUCK, JUST WAIT</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_10">
+                   <item>
+                    <widget class="QPushButton" name="DSA_LoadZip">
+                     <property name="text">
+                      <string>Load zip</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="DSA_LoadPub">
+                     <property name="text">
+                      <string>Load public key</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="DSA_Verify">
+                     <property name="text">
+                      <string>Verify file</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QTextEdit" name="DSA_Result">
+                     <property name="styleSheet">
+                      <string notr="true">QTextEdit {
+	margin: 5px;
+}</string>
+                     </property>
+                     <property name="placeholderText">
+                      <string>Verification result will be shown here...</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
